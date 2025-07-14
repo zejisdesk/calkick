@@ -362,19 +362,8 @@ class WorkoutTracker {
         reader.readAsText(file);
     }
     
-    // YouTube Modal functionality
+    // YouTube button functionality - direct search without modal
     setupYouTubeModal() {
-        const modal = document.getElementById('youtubeModal');
-        const closeBtn = document.getElementById('closeModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const videoDescription = document.getElementById('videoDescription');
-        const openYoutubeBtn = document.getElementById('openYoutube');
-        const shareVideoBtn = document.getElementById('shareVideo');
-        
-        // These properties are now stored at the class level
-        this.currentSearchQuery = '';
-        this.currentExerciseName = '';
-        
         // YouTube button click handlers
         document.addEventListener('click', (e) => {
             if (e.target.closest('.youtube-btn')) {
@@ -384,113 +373,14 @@ class WorkoutTracker {
                 const button = e.target.closest('.youtube-btn');
                 const exerciseName = button.dataset.exercise || 'Exercise';
                 
-                this.openYouTubeModal(exerciseName);
-            }
-        });
-        
-        // Close modal handlers
-        closeBtn.addEventListener('click', () => {
-            this.closeYouTubeModal();
-        });
-        
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                this.closeYouTubeModal();
-            }
-        });
-        
-        // Escape key to close modal
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) {
-                this.closeYouTubeModal();
-            }
-        });
-        
-        // Open in YouTube button
-        openYoutubeBtn.addEventListener('click', () => {
-            if (this.currentSearchQuery) {
-                // Create a more specific search query for better results
-                const enhancedQuery = `${this.currentSearchQuery}+workout+exercise+tutorial+how+to`;
-                window.open(`https://www.youtube.com/results?search_query=${enhancedQuery}`, '_blank');
-            }
-        });
-        
-        // Share video button
-        shareVideoBtn.addEventListener('click', () => {
-            if (this.currentSearchQuery) {
-                // Use the same enhanced query for sharing
-                const enhancedQuery = `${this.currentSearchQuery}+workout+exercise+tutorial+how+to`;
-                const shareUrl = `https://www.youtube.com/results?search_query=${enhancedQuery}`;
-                
-                if (navigator.share) {
-                    navigator.share({
-                        title: `${this.currentExerciseName} Tutorials`,
-                        text: `Check out these ${this.currentExerciseName} workout tutorials from CalKick!`,
-                        url: shareUrl
-                    });
-                } else {
-                    // Fallback: copy to clipboard
-                    navigator.clipboard.writeText(shareUrl).then(() => {
-                        this.showNotification('Search link copied to clipboard!');
-                    }).catch(() => {
-                        // Fallback for older browsers
-                        prompt('Copy this link:', shareUrl);
-                    });
-                }
+                // Directly open YouTube search without showing modal
+                this.openYouTubeLink(exerciseName);
             }
         });
     }
     
-    openYouTubeModal(exerciseName) {
-        const modal = document.getElementById('youtubeModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const videoDescription = document.getElementById('videoDescription');
-        const searchTitle = document.getElementById('search-title');
-        const searchDescription = document.getElementById('search-description');
-        
-        // Format exercise name for display
-        const formattedName = exerciseName.replace(/-/g, ' ')
-            .replace(/\b\w/g, l => l.toUpperCase());
-        
-        // Set modal content
-        modalTitle.textContent = `${formattedName} Tutorial`;
-        
-        // Create search query from exercise name
-        const searchQuery = formattedName.toLowerCase().replace(/\s+/g, '+');
-        
-        // Update the placeholder text to include the exercise name
-        searchTitle.textContent = `Find the best ${formattedName.toLowerCase()} tutorials`;
-        searchDescription.textContent = `Click the button below to search for ${formattedName.toLowerCase()} tutorials on YouTube`;
-        
-        // Show a message in the modal that directs users to click the button
-        videoDescription.textContent = `Find the perfect ${formattedName.toLowerCase()} tutorial that matches your skill level and preferences.`;
-        
-        // Store current exercise info
-        this.currentExerciseName = formattedName;
-        this.currentSearchQuery = searchQuery;
-        
-        // Show modal
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-        
-        // Focus management for accessibility
-        setTimeout(() => {
-            document.getElementById('closeModal').focus();
-        }, 100);
-    }
-    
-    closeYouTubeModal() {
-        const modal = document.getElementById('youtubeModal');
-        
-        // Hide modal with animation
-        modal.style.animation = 'fadeOut 0.3s ease';
-        
-        setTimeout(() => {
-            modal.classList.remove('show');
-            modal.style.animation = '';
-            document.body.style.overflow = '';
-        }, 300);
-    }
+    // Methods openYouTubeModal and closeYouTubeModal have been removed
+    // since we're now directly opening YouTube search without showing a modal
     
     showNotification(message, type = 'success') {
         const notification = document.createElement('div');
@@ -521,6 +411,41 @@ class WorkoutTracker {
                 }
             }, 300);
         }, 3000);
+    }
+    
+    // Method to open YouTube links with app support
+    openYouTubeLink(exerciseName) {
+        // Format exercise name for display
+        const formattedName = exerciseName.replace(/-/g, ' ')
+            .replace(/\b\w/g, l => l.toUpperCase());
+        
+        // Create search query from exercise name
+        const searchQuery = formattedName.toLowerCase().replace(/\s+/g, '+');
+        
+        // Create a more specific search query for better results
+        const enhancedQuery = `${searchQuery}+workout+exercise+tutorial+how+to`;
+        
+        // Use youtube:// URI scheme to attempt to open in the YouTube app
+        const youtubeAppUrl = `youtube://results?search_query=${enhancedQuery}`;
+        const webUrl = `https://www.youtube.com/results?search_query=${enhancedQuery}`;
+        
+        // Try to open in YouTube app first with a fallback to browser
+        // Create an invisible iframe to try opening the app URL
+        const appFrame = document.createElement('iframe');
+        appFrame.style.display = 'none';
+        appFrame.src = youtubeAppUrl;
+        document.body.appendChild(appFrame);
+        
+        // Set a timeout to open the web URL if the app doesn't open
+        setTimeout(() => {
+            // Remove the iframe
+            if (appFrame.parentNode) {
+                appFrame.parentNode.removeChild(appFrame);
+            }
+            
+            // Open in browser as fallback
+            window.open(webUrl, '_blank');
+        }, 500);
     }
 }
 
