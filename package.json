@@ -1,0 +1,59 @@
+{
+  "name": "calkick-workout-tracker",
+  "version": "1.0.0",
+  "description": "4-Day Calisthenics + Kickboxing Plan for Fat Loss & Cholesterol Reduction - Interactive Workout Tracker",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=4800 --open=/index.html",
+    "dev": "live-server --port=4800 --open=/index.html --watch=.",
+    "build": "node build.js && npm run minify-css && npm run minify-js",
+    "prebuild": "npm run clean",
+    "minify-css": "cleancss -o dist/styles.min.css styles.css",
+    "minify-js": "uglifyjs script.js -o dist/script.min.js -c -m",
+    "serve": "http-server -p 4800 -o",
+    "lint": "eslint script.js",
+    "format": "prettier --write *.html *.css *.js",
+    "test": "echo \"No tests specified yet\" && exit 0",
+    "setup": "node setup.js",
+    "status": "echo \"CalKick Workout Tracker Status:\" && npm list --depth=0 && echo \"\nProject files:\" && ls -la",
+    "deploy": "npm run build && gh-pages -d .",
+    "clean": "rimraf dist",
+    "add-youtube": "node add-all-youtube-buttons.js",
+    "fix-youtube": "node fix-youtube-videos.js"
+  },
+  "keywords": [
+    "workout",
+    "fitness",
+    "calisthenics",
+    "kickboxing",
+    "tracker",
+    "exercise",
+    "fat-loss",
+    "health"
+  ],
+  "author": "CalKick Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1",
+    "clean-css-cli": "^5.6.2",
+    "uglify-js": "^3.17.4",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "gh-pages": "^6.1.1",
+    "rimraf": "^5.0.5"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/calkick-workout-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/calkick-workout-tracker/issues"
+  },
+  "homepage": "https://yourusername.github.io/calkick-workout-tracker",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
