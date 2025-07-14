@@ -425,27 +425,42 @@ class WorkoutTracker {
         // Create a more specific search query for better results
         const enhancedQuery = `${searchQuery}+workout+exercise+tutorial+how+to`;
         
-        // Use youtube:// URI scheme to attempt to open in the YouTube app
-        const youtubeAppUrl = `youtube://results?search_query=${enhancedQuery}`;
-        const webUrl = `https://www.youtube.com/results?search_query=${enhancedQuery}`;
+        // Detect mobile device
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         
-        // Try to open in YouTube app first with a fallback to browser
-        // Create an invisible iframe to try opening the app URL
-        const appFrame = document.createElement('iframe');
-        appFrame.style.display = 'none';
-        appFrame.src = youtubeAppUrl;
-        document.body.appendChild(appFrame);
-        
-        // Set a timeout to open the web URL if the app doesn't open
-        setTimeout(() => {
-            // Remove the iframe
-            if (appFrame.parentNode) {
-                appFrame.parentNode.removeChild(appFrame);
-            }
+        if (isMobile) {
+            // Handle mobile devices - try to open in the YouTube app
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             
-            // Open in browser as fallback
-            window.open(webUrl, '_blank');
-        }, 500);
+            if (isAndroid) {
+                // Android intent URL format
+                const intentUrl = `intent://www.youtube.com/results?search_query=${enhancedQuery}#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=https://www.youtube.com/results?search_query=${enhancedQuery};end`;
+                window.location.href = intentUrl;
+            } else if (isIOS) {
+                // iOS YouTube app URL scheme
+                const youtubeAppUrl = `youtube://www.youtube.com/results?search_query=${enhancedQuery}`;
+                
+                // Try to open in app first
+                window.location.href = youtubeAppUrl;
+                
+                // Set a timeout to check if app opened
+                const start = Date.now();
+                setTimeout(() => {
+                    // If we're still here after timeout, app didn't open
+                    if (Date.now() - start < 2000) {
+                        // Less than 2 seconds passed, app probably didn't open
+                        window.location.href = `https://www.youtube.com/results?search_query=${enhancedQuery}`;
+                    }
+                }, 500);
+            } else {
+                // Other mobile devices - fallback to browser
+                window.location.href = `https://www.youtube.com/results?search_query=${enhancedQuery}`;
+            }
+        } else {
+            // Desktop - open in new tab
+            window.open(`https://www.youtube.com/results?search_query=${enhancedQuery}`, '_blank');
+        }
     }
 }
 
