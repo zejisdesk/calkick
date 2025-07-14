@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalKick - 7-Day Workout Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-fire"></i> CalKick Workout Tracker</h1>
+            <p class="subtitle">4-Day Calisthenics + Kickboxing Plan for Fat Loss & Cholesterol Reduction</p>
+        </header>
+
+        <div class="progress-overview">
+            <div class="week-progress">
+                <h3>Weekly Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="weekProgress"></div>
+                </div>
+                <span class="progress-text" id="progressText">0/7 days completed</span>
+            </div>
+            <div class="streak-counter">
+                <i class="fas fa-trophy"></i>
+                <span id="streakCount">0</span>
+                <small>day streak</small>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button" data-day="monday">
+                <i class="fas fa-boxing-glove"></i>
+                <span>Monday</span>
+                <small>HIIT Boxing Burn</small>
+            </button>
+            <button class="tab-button" data-day="tuesday">
+                <i class="fas fa-running"></i>
+                <span>Tuesday</span>
+                <small>Leg & Kick Blaster</small>
+            </button>
+            <button class="tab-button" data-day="wednesday">
+                <i class="fas fa-leaf"></i>
+                <span>Wednesday</span>
+                <small>Active Recovery</small>
+            </button>
+            <button class="tab-button" data-day="thursday">
+                <i class="fas fa-dumbbell"></i>
+                <span>Thursday</span>
+                <small>Full Body Annihilator</small>
+            </button>
+            <button class="tab-button" data-day="friday">
+                <i class="fas fa-heart"></i>
+                <span>Friday</span>
+                <small>Core Shredder</small>
+            </button>
+            <button class="tab-button" data-day="saturday">
+                <i class="fas fa-bed"></i>
+                <span>Saturday</span>
+                <small>Rest Day</small>
+            </button>
+            <button class="tab-button" data-day="sunday">
+                <i class="fas fa-spa"></i>
+                <span>Sunday</span>
+                <small>Light Activity</small>
+            </button>
+        </div>
+
+        <div class="workout-content">
+            <!-- Monday Content -->
+            <div class="tab-content" id="monday">
+                <div class="workout-header">
+                    <h2><i class="fas fa-boxing-glove"></i> HIIT Boxing Burn (Upper Focus)</h2>
+                    <div class="workout-stats">
+                        <span><i class="fas fa-clock"></i> 35-40 min</span>
+                        <span><i class="fas fa-fire"></i> 400-500 calories</span>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-play"></i> Warm-up (3 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="monday-warmup-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Jumping jacks</span>
+                                <span class="exercise-duration">1 minute</span>
+                            </div>
+                            <button class="youtube-btn" data-video="c4DAnQ6DtF8" data-exercise="jumping-jacks" title="Watch Jumping jacks tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="monday-warmup-2">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Arm circles + light punches</span>
+                                <span class="exercise-duration">1 minute</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="arm-circles-light-punches" title="Watch Arm circles + light punches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="monday-warmup-3">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">High knees</span>
+                                <span class="exercise-duration">1 minute</span>
+                            </div>
+                            <button class="youtube-btn" data-video="OAJ_J3EZkdY" data-exercise="high-knees" title="Watch High knees tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-fire"></i> Main Workout (5 rounds, 40s work, 20s rest)</h3>
+                    
+                    <div class="round-section">
+                        <h4>Round 1: Power Punches</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-round1-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Burpee with jab-cross</span>
+                                    <span class="exercise-description">burpee, stand, punch combo</span>
+                                </div>
+                                <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="burpee-with-jab-cross" title="Watch Burpee with jab-cross tutorial">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-round1-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Push-up to T-punch</span>
+                                    <span class="exercise-description">push-up, rotate, punch up</span>
+                                </div>
+                                <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="push-up-to-t-punch" title="Watch Push-up to T-punch tutorial">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-round1-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Speed bag punches</span>
+                                    <span class="exercise-description">rapid alternating punches overhead</span>
+                                </div>
+                            <button class="youtube-btn" data-video="cKO8SklQ_9s" data-exercise="speed-bag-punches" title="Watch Speed bag punches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-round1-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Plank punch-outs</span>
+                                    <span class="exercise-description">plank position, alternate punching forward</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="plank-punchouts" title="Watch Plank punch-outs tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Round 2: Explosive Upper</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-round2-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Explosive push-ups</span>
+                                    <span class="exercise-description">push up fast, clap if possible</span>
+                                </div>
+                                <button class="youtube-btn" data-video="IODxDxX7oi4" data-exercise="explosive-push-ups" title="Watch Explosive push-ups tutorial">
+                                    <i class="fab fa-youtube"></i>
+                                </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-round2-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Boxing mountain climbers</span>
+                                    <span class="exercise-description">mountain climber + punch</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="explosive-pushups" title="Watch Explosive push-ups tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-round2-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Pike push-up burpees</span>
+                                    <span class="exercise-description">combine pike push-up with burpee</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="pike-pushup-burpees" title="Watch Pike push-up burpees tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-round2-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Uppercut squats</span>
+                                    <span class="exercise-description">squat + uppercut on way up</span>
+                                </div>
+                            <button class="youtube-btn" data-video="CVaEhXotL7M" data-exercise="uppercut-squats" title="Watch Uppercut squats tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Finisher Round</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-finisher-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Non-stop shadow boxing</span>
+                                    <span class="exercise-duration">2 minutes straight</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="nonstop-shadow-boxing" title="Watch Non-stop shadow boxing tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="monday-finisher-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Burpee ladder</span>
+                                    <span class="exercise-description">1 burpee, 2 burpees, 3 burpees, back down</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="burpee-ladder" title="Watch Burpee ladder tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-snowflake"></i> Cool-down (2 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="monday-cooldown-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Arm stretches while walking in place</span>
+                                <span class="exercise-duration">2 minutes</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="arm-stretches-while-walking-in-place" title="Watch Arm stretches while walking in place tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuesday Content -->
+            <div class="tab-content" id="tuesday">
+                <div class="workout-header">
+                    <h2><i class="fas fa-running"></i> Explosive Leg & Kick Blaster</h2>
+                    <div class="workout-stats">
+                        <span><i class="fas fa-clock"></i> 40-45 min</span>
+                        <span><i class="fas fa-fire"></i> 450-550 calories</span>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-play"></i> Warm-up (3 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="tuesday-warmup-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Leg swings</span>
+                                <span class="exercise-duration">1 minute</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="leg-swings" title="Watch Leg swings tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="tuesday-warmup-2">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Jump squats</span>
+                                <span class="exercise-duration">1 minute</span>
+                            </div>
+                            <button class="youtube-btn" data-video="CVaEhXotL7M" data-exercise="jump-squats" title="Watch Jump squats tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="tuesday-warmup-3">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Light kicks</span>
+                                <span class="exercise-duration">1 minute</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="light-kicks" title="Watch Light kicks tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-fire"></i> Main Workout (4 rounds, 45s work, 15s rest)</h3>
+                    
+                    <div class="round-section">
+                        <h4>Round 1: Power Legs</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round1-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Jump squats</span>
+                                    <span class="exercise-description">explosive up, soft landing</span>
+                                </div>
+                            <button class="youtube-btn" data-video="CVaEhXotL7M" data-exercise="jump-squats" title="Watch Jump squats tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round1-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Alternating jump lunges</span>
+                                    <span class="exercise-description">explosive lunge jumps</span>
+                                </div>
+                            <button class="youtube-btn" data-video="mkCX1_2gXbE" data-exercise="alternating-jump-lunges" title="Watch Alternating jump lunges tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round1-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Single-leg burpees</span>
+                                    <span class="exercise-description">alternate legs each rep</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="singleleg-burpees" title="Watch Single-leg burpees tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round1-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Squat to front kick</span>
+                                    <span class="exercise-description">squat, stand, kick</span>
+                                </div>
+                            <button class="youtube-btn" data-video="CVaEhXotL7M" data-exercise="squat-to-front-kick" title="Watch Squat to front kick tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round1-5">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Lateral bounds</span>
+                                    <span class="exercise-description">side to side jumps</span>
+                                </div>
+                            <button class="youtube-btn" data-video="Cvp_kVz3gCo" data-exercise="lateral-bounds" title="Watch Lateral bounds tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Round 2: Kick Combinations</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round2-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Front kick + squat jump</span>
+                                    <span class="exercise-description">kick, squat jump</span>
+                                </div>
+                            <button class="youtube-btn" data-video="CVaEhXotL7M" data-exercise="front-kick-squat-jump" title="Watch Front kick + squat jump tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round2-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Side kick + lateral lunge</span>
+                                    <span class="exercise-description">kick, lunge opposite side</span>
+                                </div>
+                            <button class="youtube-btn" data-video="Cvp_kVz3gCo" data-exercise="side-kick-lateral-lunge" title="Watch Side kick + lateral lunge tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round2-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Knee strike + jump</span>
+                                    <span class="exercise-description">knee up, jump</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="knee-strike-jump" title="Watch Knee strike + jump tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round2-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Roundhouse kick simulation</span>
+                                    <span class="exercise-description">fast knee-to-kick motion</span>
+                                </div>
+                            <button class="youtube-btn" data-video="rUC9EKVyMaq" data-exercise="roundhouse-kick-simulation" title="Watch Roundhouse kick simulation tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round2-5">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Cossack squat + kick</span>
+                                    <span class="exercise-description">side squat, kick out</span>
+                                </div>
+                            <button class="youtube-btn" data-video="CVaEhXotL7M" data-exercise="cossack-squat-kick" title="Watch Cossack squat + kick tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Round 3: Metabolic Burner</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round3-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Burpee broad jumps</span>
+                                    <span class="exercise-description">burpee, jump forward</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="burpee-broad-jumps" title="Watch Burpee broad jumps tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round3-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">180-degree jump squats</span>
+                                    <span class="exercise-description">jump and turn</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="180degree-jump-squats" title="Watch 180-degree jump squats tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round3-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">High knee runs</span>
+                                    <span class="exercise-duration">30 seconds max speed</span>
+                                </div>
+                            <button class="youtube-btn" data-video="OAJ_J3EZkdY" data-exercise="high-knee-runs" title="Watch High knee runs tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round3-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Kick-through</span>
+                                    <span class="exercise-description">bear crawl position, kick through</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="kickthrough" title="Watch Kick-through tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round3-5">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Squat thrust + kick</span>
+                                    <span class="exercise-description">squat thrust, kick on way up</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="squat-thrust-kick" title="Watch Squat thrust + kick tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Round 4: Finisher</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round4-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Tabata kicks</span>
+                                    <span class="exercise-description">20 seconds on, 10 seconds off, 4 rounds</span>
+                                </div>
+                            <button class="youtube-btn" data-video="ljqra3BcqWM" data-exercise="tabata-kicks" title="Watch Tabata kicks tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="tuesday-round4-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Wall sit</span>
+                                    <span class="exercise-duration">60 seconds max hold</span>
+                                </div>
+                            <button class="youtube-btn" data-video="y-wV4Venusw" data-exercise="wall-sit" title="Watch Wall sit tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-snowflake"></i> Cool-down (2 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="tuesday-cooldown-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Quad stretch while walking</span>
+                                <span class="exercise-duration">2 minutes</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="quad-stretch-while-walking" title="Watch Quad stretch while walking tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wednesday Content -->
+            <div class="tab-content" id="wednesday">
+                <div class="workout-header">
+                    <h2><i class="fas fa-leaf"></i> Active Recovery</h2>
+                    <div class="workout-stats">
+                        <span><i class="fas fa-clock"></i> 20 min</span>
+                        <span><i class="fas fa-heart"></i> Light Activity</span>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-walking"></i> Recovery Activities</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="wednesday-recovery-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">20-minute walk</span>
+                                <span class="exercise-description">Light pace, focus on breathing</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="20minute-walk" title="Watch 20-minute walk tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="wednesday-recovery-2">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Light yoga or stretching</span>
+                                <span class="exercise-description">Focus on flexibility and relaxation</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="light-yoga-or-stretching" title="Watch Light yoga or stretching tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="wednesday-recovery-3">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Meditation or breathing exercises</span>
+                                <span class="exercise-description">5-10 minutes mindfulness</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="meditation-or-breathing-exercises" title="Watch Meditation or breathing exercises tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="recovery-tips">
+                    <h3><i class="fas fa-lightbulb"></i> Recovery Tips</h3>
+                    <ul>
+                        <li>Stay hydrated throughout the day</li>
+                        <li>Focus on getting quality sleep (7-9 hours)</li>
+                        <li>Eat nutrient-dense foods to support recovery</li>
+                        <li>Listen to your body and rest if needed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Thursday Content -->
+            <div class="tab-content" id="thursday">
+                <div class="workout-header">
+                    <h2><i class="fas fa-dumbbell"></i> Full Body Fat Annihilator</h2>
+                    <div class="workout-stats">
+                        <span><i class="fas fa-clock"></i> 45-50 min</span>
+                        <span><i class="fas fa-fire"></i> 500-600 calories</span>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-play"></i> Warm-up (2 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="thursday-warmup-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Jumping jacks</span>
+                                <span class="exercise-duration">1 minute</span>
+                            </div>
+                            <button class="youtube-btn" data-video="c4DAnQ6DtF8" data-exercise="jumping-jacks" title="Watch Jumping jacks tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="thursday-warmup-2">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Dynamic movement</span>
+                                <span class="exercise-duration">1 minute</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="dynamic-movement" title="Watch Dynamic movement tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-skull"></i> DEATH CIRCUITS (6 rounds, 30s work, 10s rest)</h3>
+                    
+                    <div class="round-section">
+                        <h4>Circuit 1: Cardio Crusher</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit1-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Burpee tuck jumps</span>
+                                    <span class="exercise-description">burpee + tuck jump</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="burpee-tuck-jumps" title="Watch Burpee tuck jumps tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit1-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Boxing shuffle + hooks</span>
+                                    <span class="exercise-description">side shuffle with punches</span>
+                                </div>
+                            <button class="youtube-btn" data-video="ljqra3BcqWM" data-exercise="boxing-shuffle-hooks" title="Watch Boxing shuffle + hooks tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit1-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Mountain climber + cross punch</span>
+                                    <span class="exercise-description">mountain climber with punching</span>
+                                </div>
+                            <button class="youtube-btn" data-video="nmwgirgXLYM" data-exercise="mountain-climber-cross-punch" title="Watch Mountain climber + cross punch tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit1-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Jump squat + jab-cross</span>
+                                    <span class="exercise-description">squat jump with punches</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="jump-squat-jabcross" title="Watch Jump squat + jab-cross tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Circuit 2: Strength Burner</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit2-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Explosive push-ups</span>
+                                    <span class="exercise-description">fast, explosive movement</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="explosive-pushups" title="Watch Explosive push-ups tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit2-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Single-leg burpee</span>
+                                    <span class="exercise-description">harder version</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="singleleg-burpee" title="Watch Single-leg burpee tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit2-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Pike push-up + knee strike</span>
+                                    <span class="exercise-description">pike push-up with knee</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="pike-pushup-knee-strike" title="Watch Pike push-up + knee strike tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit2-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Plank jacks + punch</span>
+                                    <span class="exercise-description">plank jacks with punching</span>
+                                </div>
+                            <button class="youtube-btn" data-video="pSHjTRCQxIw" data-exercise="plank-jacks-punch" title="Watch Plank jacks + punch tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Circuit 3: Kickboxing Fury</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit3-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Jab-cross-hook-kick combo</span>
+                                    <span class="exercise-description">4-strike combination</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="jabcrosshookkick-combo" title="Watch Jab-cross-hook-kick combo tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit3-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Sprawl + knee strike</span>
+                                    <span class="exercise-description">sprawl with knee</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="sprawl-knee-strike" title="Watch Sprawl + knee strike tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit3-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Duck-punch-kick combo</span>
+                                    <span class="exercise-description">defensive combo</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="duckpunchkick-combo" title="Watch Duck-punch-kick combo tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit3-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Non-stop punches</span>
+                                    <span class="exercise-duration">30 seconds</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="nonstop-punches" title="Watch Non-stop punches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Circuit 4: Metabolic Mayhem</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit4-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Burpee + 180 jump</span>
+                                    <span class="exercise-description">burpee with 180 turn</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="burpee-180-jump" title="Watch Burpee + 180 jump tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit4-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Lunge jump + uppercut</span>
+                                    <span class="exercise-description">lunge jump with punch</span>
+                                </div>
+                            <button class="youtube-btn" data-video="CVaEhXotL7M" data-exercise="lunge-jump-uppercut" title="Watch Lunge jump + uppercut tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit4-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Push-up + knee to elbow</span>
+                                    <span class="exercise-description">push-up with knee drive</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="pushup-knee-to-elbow" title="Watch Push-up + knee to elbow tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-circuit4-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Squat thrust + side kick</span>
+                                    <span class="exercise-description">squat thrust with kick</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="squat-thrust-side-kick" title="Watch Squat thrust + side kick tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Finisher Fury</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-finisher-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Tabata burpees</span>
+                                    <span class="exercise-description">20 on, 10 off, 8 rounds</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="tabata-burpees" title="Watch Tabata burpees tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="thursday-finisher-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Max punches</span>
+                                    <span class="exercise-duration">60 seconds non-stop</span>
+                                </div>
+                            <button class="youtube-btn" data-video="ljqra3BcqWM" data-exercise="max-punches" title="Watch Max punches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-snowflake"></i> Cool-down (2 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="thursday-cooldown-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Walking and light stretching</span>
+                                <span class="exercise-duration">2 minutes</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="walking-and-light-stretching" title="Watch Walking and light stretching tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Friday Content -->
+            <div class="tab-content" id="friday">
+                <div class="workout-header">
+                    <h2><i class="fas fa-heart"></i> Core Shredder & Cardio Finisher</h2>
+                    <div class="workout-stats">
+                        <span><i class="fas fa-clock"></i> 35-40 min</span>
+                        <span><i class="fas fa-fire"></i> 400-500 calories</span>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-play"></i> Warm-up (2 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="friday-warmup-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Torso twists + light punches</span>
+                                <span class="exercise-duration">2 minutes</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="torso-twists-light-punches" title="Watch Torso twists + light punches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-fire"></i> Core Destruction (4 rounds, 40s work, 20s rest)</h3>
+                    
+                    <div class="round-section">
+                        <h4>Round 1: Explosive Core</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round1-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Burpee + knee tuck</span>
+                                    <span class="exercise-description">burpee, jump, tuck knees</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="burpee-knee-tuck" title="Watch Burpee + knee tuck tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round1-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Russian twist + punch</span>
+                                    <span class="exercise-description">twist, punch across body</span>
+                                </div>
+                            <button class="youtube-btn" data-video="L_xrDAtykMI" data-exercise="russian-twist-punch" title="Watch Russian twist + punch tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round1-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Plank up-downs</span>
+                                    <span class="exercise-description">plank to push-up position</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="plank-updowns" title="Watch Plank up-downs tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round1-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Bicycle crunch + punch</span>
+                                    <span class="exercise-description">crunch, punch with elbow</span>
+                                </div>
+                            <button class="youtube-btn" data-video="7UVgs18Y1P4" data-exercise="bicycle-crunch-punch" title="Watch Bicycle crunch + punch tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round1-5">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">V-ups</span>
+                                    <span class="exercise-description">explosive sit-up to V-shape</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="vups" title="Watch V-ups tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Round 2: Standing Core Cardio</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round2-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Standing oblique crunches</span>
+                                    <span class="exercise-description">knee to elbow, fast</span>
+                                </div>
+                            <button class="youtube-btn" data-video="qDcniqddTeE" data-exercise="standing-oblique-crunches" title="Watch Standing oblique crunches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round2-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Woodchoppers</span>
+                                    <span class="exercise-description">diagonal chop motion</span>
+                                </div>
+                            <button class="youtube-btn" data-video="cfHs-5mC8UY" data-exercise="woodchoppers" title="Watch Woodchoppers tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round2-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Knee strike + twist</span>
+                                    <span class="exercise-description">knee up, twist opposite way</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="knee-strike-twist" title="Watch Knee strike + twist tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round2-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Standing bicycle</span>
+                                    <span class="exercise-description">alternate knee to elbow</span>
+                                </div>
+                            <button class="youtube-btn" data-video="nmwgirgXLYM" data-exercise="standing-bicycle" title="Watch Standing bicycle tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round2-5">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Uppercut + knee</span>
+                                    <span class="exercise-description">uppercut, same side knee</span>
+                                </div>
+                            <button class="youtube-btn" data-video="ljqra3BcqWM" data-exercise="uppercut-knee" title="Watch Uppercut + knee tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Round 3: Plank Variations</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round3-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Plank jacks + punch</span>
+                                    <span class="exercise-description">jack feet, punch forward</span>
+                                </div>
+                            <button class="youtube-btn" data-video="pSHjTRCQxIw" data-exercise="plank-jacks-punch" title="Watch Plank jacks + punch tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round3-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Side plank punches</span>
+                                    <span class="exercise-description">side plank, punch down</span>
+                                </div>
+                            <button class="youtube-btn" data-video="pSHjTRCQxIw" data-exercise="side-plank-punches" title="Watch Side plank punches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round3-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Plank mountain climbers</span>
+                                    <span class="exercise-description">fast as possible</span>
+                                </div>
+                            <button class="youtube-btn" data-video="nmwgirgXLYM" data-exercise="plank-mountain-climbers" title="Watch Plank mountain climbers tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round3-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Plank kick-throughs</span>
+                                    <span class="exercise-description">kick leg through to side</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="plank-kickthroughs" title="Watch Plank kick-throughs tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round3-5">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Plank burpees</span>
+                                    <span class="exercise-description">plank, burpee, back to plank</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="plank-burpees" title="Watch Plank burpees tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="round-section">
+                        <h4>Round 4: Cardio Finisher</h4>
+                        <div class="exercise-list">
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round4-1">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">High knees</span>
+                                    <span class="exercise-duration">30 seconds max speed</span>
+                                </div>
+                            <button class="youtube-btn" data-video="OAJ_J3EZkdY" data-exercise="high-knees" title="Watch High knees tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round4-2">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Burpee broad jumps</span>
+                                    <span class="exercise-description">burpee, jump forward</span>
+                                </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="burpee-broad-jumps" title="Watch Burpee broad jumps tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round4-3">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Boxing shuffle</span>
+                                    <span class="exercise-description">side to side with punches</span>
+                                </div>
+                            <button class="youtube-btn" data-video="ljqra3BcqWM" data-exercise="boxing-shuffle" title="Watch Boxing shuffle tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round4-4">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Jump squats</span>
+                                    <span class="exercise-description">explosive</span>
+                                </div>
+                            <button class="youtube-btn" data-video="CVaEhXotL7M" data-exercise="jump-squats" title="Watch Jump squats tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                            <label class="exercise-item">
+                                <input type="checkbox" data-exercise="friday-round4-5">
+                                <span class="checkmark"></span>
+                                <div class="exercise-details">
+                                    <span class="exercise-name">Sprint punches</span>
+                                    <span class="exercise-description">punch as fast as possible</span>
+                                </div>
+                            <button class="youtube-btn" data-video="ljqra3BcqWM" data-exercise="sprint-punches" title="Watch Sprint punches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-fire"></i> FINAL BURN (3 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="friday-final-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Tabata core: Mountain climbers</span>
+                                <span class="exercise-description">20 on, 10 off</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="tabata-core-mountain-climbers" title="Watch Tabata core: Mountain climbers tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="friday-final-2">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Tabata core: Burpees</span>
+                                <span class="exercise-description">20 on, 10 off</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="tabata-core-burpees" title="Watch Tabata core: Burpees tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="friday-final-3">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Tabata core: Punches</span>
+                                <span class="exercise-description">20 on, 10 off, repeat 2x</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="tabata-core-punches" title="Watch Tabata core: Punches tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-snowflake"></i> Cool-down (2 minutes)</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="friday-cooldown-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Light walking and breathing</span>
+                                <span class="exercise-duration">2 minutes</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="light-walking-and-breathing" title="Watch Light walking and breathing tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saturday Content -->
+            <div class="tab-content" id="saturday">
+                <div class="workout-header">
+                    <h2><i class="fas fa-bed"></i> Rest Day</h2>
+                    <div class="workout-stats">
+                        <span><i class="fas fa-heart"></i> Recovery Focus</span>
+                        <span><i class="fas fa-battery-full"></i> Recharge</span>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-spa"></i> Optional Light Activities</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="saturday-rest-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Gentle stretching</span>
+                                <span class="exercise-description">10-15 minutes of light stretching</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="gentle-stretching" title="Watch Gentle stretching tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="saturday-rest-2">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Leisurely walk</span>
+                                <span class="exercise-description">20-30 minutes at comfortable pace</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="leisurely-walk" title="Watch Leisurely walk tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="saturday-rest-3">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Foam rolling or self-massage</span>
+                                <span class="exercise-description">Focus on sore muscles</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="foam-rolling-or-selfmassage" title="Watch Foam rolling or self-massage tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="saturday-rest-4">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Hydration and nutrition focus</span>
+                                <span class="exercise-description">Plan meals for the upcoming week</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="hydration-and-nutrition-focus" title="Watch Hydration and nutrition focus tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="recovery-tips">
+                    <h3><i class="fas fa-lightbulb"></i> Rest Day Tips</h3>
+                    <ul>
+                        <li>Prioritize 7-9 hours of quality sleep</li>
+                        <li>Stay hydrated throughout the day</li>
+                        <li>Focus on nutrient-dense meals</li>
+                        <li>Practice stress management techniques</li>
+                        <li>Prepare for the upcoming week</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sunday Content -->
+            <div class="tab-content" id="sunday">
+                <div class="workout-header">
+                    <h2><i class="fas fa-spa"></i> Light Activity Day</h2>
+                    <div class="workout-stats">
+                        <span><i class="fas fa-clock"></i> 20-30 min</span>
+                        <span><i class="fas fa-heart"></i> Low Intensity</span>
+                    </div>
+                </div>
+
+                <div class="workout-section">
+                    <h3><i class="fas fa-walking"></i> Light Activities</h3>
+                    <div class="exercise-list">
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="sunday-light-1">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Nature walk or hike</span>
+                                <span class="exercise-description">30-45 minutes in nature</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="nature-walk-or-hike" title="Watch Nature walk or hike tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="sunday-light-2">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Yoga or tai chi</span>
+                                <span class="exercise-description">20-30 minutes gentle movement</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="yoga-or-tai-chi" title="Watch Yoga or tai chi tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="sunday-light-3">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Swimming or water activities</span>
+                                <span class="exercise-description">Low-impact cardio</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="swimming-or-water-activities" title="Watch Swimming or water activities tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="sunday-light-4">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Recreational sports</span>
+                                <span class="exercise-description">Tennis, basketball, cycling (light intensity)</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="recreational-sports" title="Watch Recreational sports tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                        <label class="exercise-item">
+                            <input type="checkbox" data-exercise="sunday-light-5">
+                            <span class="checkmark"></span>
+                            <div class="exercise-details">
+                                <span class="exercise-name">Meditation and planning</span>
+                                <span class="exercise-description">Reflect on the week and plan ahead</span>
+                            </div>
+                            <button class="youtube-btn" data-video="auBLPXO8Fww" data-exercise="meditation-and-planning" title="Watch Meditation and planning tutorial">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="recovery-tips">
+                    <h3><i class="fas fa-lightbulb"></i> Sunday Preparation</h3>
+                    <ul>
+                        <li>Review your progress from the past week</li>
+                        <li>Set goals for the upcoming week</li>
+                        <li>Prepare workout clothes and equipment</li>
+                        <li>Plan your meal prep for the week</li>
+                        <li>Get to bed early for Monday's workout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="reset-section">
+            <button id="resetProgress" class="reset-button">
+                <i class="fas fa-redo"></i> Reset All Progress
+            </button>
+        </div>
+    </div>
+
+    <!-- YouTube Search Modal -->
+    <div id="youtubeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Exercise Tutorial</h3>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="youtube-search-container">
+                    <div class="youtube-search-placeholder">
+                        <i class="fab fa-youtube" style="font-size: 64px; color: #FF0000; margin-bottom: 20px;"></i>
+                        <h3 id="search-title">Find the best tutorial for this exercise</h3>
+                        <p id="search-description">Click the button below to search YouTube for tutorials</p>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <p id="videoDescription">Find the perfect tutorial that matches your skill level and preferences.</p>
+                    <div class="video-actions">
+                        <button id="openYoutube" class="action-btn primary-action">
+                            <i class="fab fa-youtube"></i> Search on YouTube
+                        </button>
+                        <button id="shareVideo" class="action-btn">
+                            <i class="fas fa-share"></i> Share Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="video-mapping.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
